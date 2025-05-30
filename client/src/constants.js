@@ -1,1 +1,1 @@
-export const BACKEND_URL = "http://localhost:3000"
+export const BACKEND_URL = "https://web3-persona-backend.fly.dev"

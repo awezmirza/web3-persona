@@ -18,5 +18,8 @@
     "openai": "^4.98.0",
     "web3-utils": "^4.3.3"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10"
+  }
 }
