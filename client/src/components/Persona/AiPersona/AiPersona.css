@@ -1,0 +1,49 @@
+.persona-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.persona-section {
+    margin-bottom: 1.5rem;
+}
+
+.persona-section h3 {
+    color: #90caf9;
+    /* Light blue for headings */
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.recommendation-item {
+    margin-bottom: 1rem;
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.recommendation-item:hover {
+    background-color: #333;
+}
+
+.recommendation-item a {
+    color: #64b5f6;
+    text-decoration: none;
+}
+
+.recommendation-item a:hover {
+    text-decoration: underline;
+}
+
+.recommendation-item p {
+    margin: 0.5rem 0 0;
+    color: #b0bec5;
+}

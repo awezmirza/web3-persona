@@ -1,10 +1,10 @@
-import InputAddress from "./components/Input/InputAddress";
+import DataCenter from "./components/DataCenter";
 import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
     <>
-      <InputAddress />
+      <DataCenter />
       <ToastContainer />
     </>
   );

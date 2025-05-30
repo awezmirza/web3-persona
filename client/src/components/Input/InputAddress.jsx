@@ -4,7 +4,7 @@ import Conatiner from "./Conatiner";
 
 import { Mosaic } from "react-loading-indicators";
 
-const InputAddress = () => {
+const InputAddress = ({ setPersona }) => {
   const [fetching, setFetching] = useState(false);
 
   if (fetching) {
@@ -23,7 +23,7 @@ const InputAddress = () => {
     <>
       <div className="page input-page">
         <VantaNetBG />
-        <Conatiner setFetching={setFetching} />
+        <Conatiner setFetching={setFetching} setPersona={setPersona} />
       </div>
     </>
   );

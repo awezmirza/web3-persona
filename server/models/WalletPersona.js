@@ -14,7 +14,8 @@ const walletPersonaSchema = new mongoose.Schema({
   ],
   rawData: Object,
   processedData: Object,
-  lastUpdated: { type: Date, default: Date.now },
+  lastUpdated: { type: Date, default: Date.now },      // general updates (e.g. bio)
+  lastDataUpdated: { type: Date },                     // raw/processed data only
   aiPersona: { type: String },
   summary: { type: String },
   lastBioUpdate: { type: Date }

@@ -5,24 +5,34 @@ import WalletPersona from '../models/WalletPersona.js';
 export const getPersona = async (req, res) => {
     try {
         const { walletAddress } = req.params;
-        if (!validateAddress(walletAddress)) return res.status(400).json({ error: 'Invalid wallet address' });
+        if (!validateAddress(walletAddress)) {
+            return res.status(400).json({ error: 'Invalid wallet address' });
+        }
 
         const existing = await WalletPersona.findOne({ wallet: walletAddress });
-        const isFresh = existing && (Date.now() - new Date(existing.lastUpdated)) < 86400000;
 
-        if (existing && isFresh) return res.json(existing);
+        const isFresh =
+            existing && (Date.now() - new Date(existing.lastDataUpdated)) < 86400000;
+
+        if (existing && isFresh) {
+            return res.json(existing);
+        }
 
         const data = await analyzeWallet(walletAddress);
+
         const newPersona = await WalletPersona.findOneAndUpdate(
             { wallet: walletAddress },
-            { ...data, lastUpdated: new Date() },
+            {
+                ...data,
+                lastUpdated: new Date(),       // overall doc update
+                lastDataUpdated: new Date()    // specific to data update
+            },
             { new: true, upsert: true }
         );
 
         res.json(newPersona);
     } catch (err) {
-        console.log(err);
-
+        console.error(err);
         res.status(500).json({ error: 'Getting persona failed', message: err.message });
     }
 };

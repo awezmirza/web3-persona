@@ -1,0 +1,60 @@
+.health-score-section {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.health-meter-container {
+    background-color: #36372a;
+    border-radius: 12px;
+    width: 30%;
+    height: 93%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wallet-radar-container {
+    height: 100%;
+
+    width: 36%;
+}
+
+.factors {
+    width: 30%;
+    height: 100%;
+}
+
+.health-score-factors {
+    background-color: #36372a;
+    padding: 1px 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* max-width: 600px; */
+    width: 100%;
+}
+
+.health-score-factors h3 {
+    margin-bottom: 16px;
+    color: #ededed;
+    font-size: 22px;
+    text-align: center;
+}
+
+.health-score-factors ul {
+    list-style-type: disc;
+    padding-left: 24px;
+    color: #cecece;
+}
+
+.health-score-factors li {
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.health-score-factors li strong {
+    color: #ffffff;
+}

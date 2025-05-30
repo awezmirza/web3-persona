@@ -3,15 +3,16 @@ import { toast } from "react-toastify";
 import { BACKEND_URL } from "../../constants";
 import axios from "axios";
 
-const Conatiner = ({ setFetching }) => {
+const Conatiner = ({ setFetching, setPersona }) => {
   const [walletAddress, setWalletAddress] = useState("");
-  const [persona, setPersona] = useState(null);
   const fetchPersona = async () => {
     try {
       setFetching(true);
+      const trimmedAddress = walletAddress.trim();
       const response = await axios.get(
-        BACKEND_URL + "/api/persona/" + walletAddress
+        BACKEND_URL + "/api/persona/" + trimmedAddress
       );
+
       setPersona(response.data);
     } catch (err) {
       setPersona(null);
@@ -29,7 +30,9 @@ const Conatiner = ({ setFetching }) => {
           value={walletAddress}
           onChange={(e) => setWalletAddress(e.target.value)}
         />
-        <button onClick={fetchPersona}>Generate Persona</button>
+        <button type="submit" onClick={fetchPersona}>
+          Generate Persona
+        </button>
       </div>
       <div className="note">
         Note: The on chain data of Polygon blockchain will be used
